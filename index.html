@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Portail Officiel - Services Administratifs</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,7 +17,7 @@
         .dark-mode { --bg: #121212; --card-bg: #1e1e1e; --text: #ffffff; --border: #333333; }
         
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; transition: background 0.3s, color 0.3s; }
-        body { background: var(--bg); color: var(--text); display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
+        body { background: var(--bg); color: var(--text); display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
         
         .top-bar { background: #000071; color: white; text-align: center; padding: 10px; font-size: 0.8rem; font-weight: bold; letter-spacing: 0.5px; }
         header { 
@@ -30,15 +30,18 @@
 
         .container { max-width: 900px; margin: -2.5rem auto 50px; padding: 0 20px; flex: 1; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .card { 
             background: var(--card-bg); padding: 2rem 1rem; border-radius: 8px; cursor: pointer; text-align: center; 
-            border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.08); touch-action: manipulation;
+            border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
         .card:hover { transform: translateY(-5px); border-color: var(--blue); }
         .card i { font-size: 2.2rem; color: var(--blue); margin-bottom: 1rem; }
 
-        .rating-widget { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 15px 25px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .rating-widget {
+            background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
+            padding: 15px 25px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 20px;
+        }
         .rating-stars { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 5px; }
         .rating-stars img { height: 20px; }
         .rating-stars span { font-size: 1.5rem; font-weight: 800; color: var(--text); }
@@ -48,17 +51,17 @@
         .live-counter { color: #666; font-size: 0.85rem; margin-bottom: 25px; }
         
         .reviews-section { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 20px; text-align: left; }
-        .reviews-header { font-weight: bold; color: var(--blue); display: flex; align-items: center; gap: 10px; margin-bottom: 15px; font-size: 1.1rem; }
+        .reviews-header { font-weight: bold; color: var(--blue); display: flex; align-items: center; gap: 10px; margin-bottom: 15px; font-size: 1.1rem; cursor: pointer;}
         .reviews-scroll { max-height: 400px; overflow-y: auto; padding-right: 10px; }
         .review-card { background: rgba(0,0,0,0.02); padding: 15px; border-radius: 8px; border-left: 4px solid var(--blue); font-size: 0.85rem; margin-bottom: 12px; }
         .review-card b { display: block; margin-top: 8px; color: var(--blue); }
         .verified-check { color: #25D366; font-size: 0.8rem; margin-left: 5px; }
 
-        .app-box { background: var(--card-bg); padding: 25px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); display: none; border: 1px solid var(--border); }
+        .app-box { background: var(--card-bg); padding: 35px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); display: none; border: 1px solid var(--border); }
         .form-group { margin-bottom: 15px; text-align: left; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: var(--blue); font-size: 0.9rem; }
         
-        input, select { width: 100%; padding: 12px; border: 2px solid var(--border); border-radius: 8px; font-size: 16px !important; background: var(--card-bg); color: var(--text); }
+        input, select { width: 100%; padding: 12px; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem; background: var(--card-bg); color: var(--text); }
         
         .btn { padding: 16px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; font-size: 1rem; transition: 0.2s; margin-top: 10px; }
         .btn-blue { background: var(--blue); color: white; }
@@ -69,7 +72,7 @@
         .floating-help { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 14px 22px; border-radius: 50px; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 9999; }
 
         .doc-list-box { background: #fff5f5; border: 1px solid var(--red); padding: 15px; border-radius: 8px; margin-bottom: 15px; font-size: 0.8rem; }
-        .wa-instruction { background: #e8f9ef; border: 1px solid #25D366; padding: 20px; border-radius: 10px; margin: 15px 0; font-size: 0.9rem; text-align: center; }
+        .wa-instruction { background: #e8f9ef; border: 1px solid #25D366; padding: 15px; border-radius: 8px; margin: 15px 0; font-size: 0.9rem; }
         
         footer { background: var(--card-bg); padding: 30px; text-align: center; font-size: 0.75rem; color: #888; border-top: 1px solid var(--border); }
         #signature-pad { border: 2px dashed #ccc; width: 100%; height: 180px; margin-bottom: 20px; background: #fdfdfd; display: block; touch-action: none; }
@@ -77,16 +80,17 @@
 </head>
 <body>
 
-<div class="top-bar"><i class="fas fa-shield-alt"></i> PROTECTION DES DONNÉES : SSL 256-BIT</div>
+<div class="top-bar"><i class="fas fa-shield-alt"></i> PROTECTION DES DONNÉES GARANTIE : CONNEXION SÉCURISÉE SSL 256-BIT</div>
 
 <header>
+    <div style="font-weight: 900; line-height:1.1;"></div>
     <div style="font-weight: bold; color: var(--blue)">SERVICE-PRIVE-PRO.FR</div>
-    <div onclick="document.body.classList.toggle('dark-mode')" style="cursor:pointer; padding: 5px;"><i class="fas fa-moon"></i></div>
+    <div onclick="document.body.classList.toggle('dark-mode')" style="cursor:pointer"><i class="fas fa-moon"></i></div>
 </header>
 
 <div class="hero">
     <h1>Conformité & Saisie Dossiers</h1>
-    <p style="opacity: 0.9;">Aide professionnelle aux démarches administratives</p>
+    <p style="opacity: 0.9;">Plateforme sécurisée d'aide aux démarches administratives</p>
 </div>
 
 <div class="container">
@@ -96,21 +100,27 @@
                 <div class="rating-stars">
                     <img src="https://www.gstatic.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google">
                     <span>4.9</span>
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
                 </div>
                 <div class="rating-text">Excellent</div>
             </div>
-            <div class="live-counter">● <span id="counter-nb">14 280</span> dossiers traités</div>
+
+            <div class="live-counter">
+                <span style="color: #25D366; font-weight: bold;">● En direct :</span> 
+                <span id="counter-nb" style="font-weight: bold;">14 280</span> dossiers traités
+            </div>
         </div>
 
         <div class="grid">
             <div class="card" onclick="startApp('nat')"><i class="fas fa-gavel"></i><h4>Nationalité</h4></div>
             <div class="card" onclick="startApp('sejour')"><i class="fas fa-id-badge"></i><h4>Titre de Séjour</h4></div>
-            <div class="card" onclick="startApp('id')"><i class="fas fa-passport"></i><h4>Identité</h4></div>
-            <div class="card" onclick="startApp('permis')"><i class="fas fa-car-side"></i><h4>Permis</h4></div>
+            <div class="card" onclick="startApp('id')"><i class="fas fa-passport"></i><h4>CNI / Passeport</h4></div>
+            <div class="card" onclick="startApp('permis')"><i class="fas fa-car-side"></i><h4>Permis de Conduire</h4></div>
             <div class="card" onclick="startApp('cartegrise')"><i class="fas fa-file-invoice"></i><h4>Carte Grise</h4></div>
             <div class="card" onclick="startApp('immatriculation')"><i class="fas fa-copy"></i><h4>Immatriculation</h4></div>
-            <div class="card" onclick="startApp('code')"><i class="fas fa-copy"></i><h4>Code Route</h4></div>
+            <div class="card" onclick="startApp('code')"><i class="fas fa-copy"></i><h4>Code de la Route</h4></div>
         </div>
 
         <div class="reviews-section">
@@ -127,7 +137,7 @@
 
 <div id="toast-notify"></div>
 
-<a href="https://wa.me/33774965043" class="floating-help"><i class="fab fa-whatsapp"></i> Aide WhatsApp</a>
+<a href="https://wa.me/33774965043?text=Bonjour, j'ai besoin d'une assistance professionnelle fiable pour mon dossier." class="floating-help"><i class="fab fa-whatsapp"></i> Aide WhatsApp</a>
 
 <footer>&copy; 2026 Portail Indépendant. Données protégées RGPD.</footer>
 
@@ -135,53 +145,104 @@
 const CONFIG = {
     nat: {
         label: "Nationalité Française",
-        docs: "Cerfa, Acte de naissance, Titre de séjour, Passeport, Photos, Timbre fiscal 55€.",
-        questions: [{q:"1. Nationalité actuelle ?", t:"text"}, {q:"2. Nom et Prénoms ?", t:"text"}, {q:"3. Numéro Titre de Séjour ?", t:"text"}, {q:"4. Profession ?", t:"text"}, {q:"5. Date d'entrée en France ?", t:"text"}]
+        docs: "Cerfa n°12753*03, Acte de naissance, Titre de séjour, Passeport, Photos d'identité, Timbre fiscal 55 €, Justificatif domicile, 3 fiches de paie, Contrat de travail, 3 avis d'imposition, Bordereau P237, Diplôme B2, Examen civique, Casier judiciaire étranger, Acte de mariage, Actes de naissance enfants.",
+        questions: [
+            {q:"1. Nationalité actuelle ?", t:"text"}, {q:"2. Nom et Prénoms ?", t:"text"}, {q:"3. Date et lieu de naissance ?", t:"text"},
+            {q:"4. Numéro Titre de Séjour ?", t:"text"}, {q:"5. Date d'arrivée en France ?", t:"text"}, {q:"6. Situation familiale ?", o:["Célibataire", "Marié(e)", "Divorcé(e)"]},
+            {q:"7. Niveau de français B1 ?", o:["Oui", "Non"]}, {q:"8. Profession actuelle ?", t:"text"}, {q:"9. Revenus déclarés ?", o:["Oui", "Non"]},
+            {q:"10. Enfants à charge ?", o:["Oui", "Non"]}, {q:"11. Casier judiciaire vierge ?", o:["Oui", "Non"]}, {q:"12. À jour des impôts ?", o:["Oui", "Non"]}, {q:"13. Validez-vous la saisie ?", o:["Oui"]}
+        ]
     },
     sejour: {
         label: "Titre de Séjour",
-        docs: "Passeport, Acte naissance, Justificatif domicile, Photos.",
-        questions: [{q:"1. Numéro Étranger ?", t:"text"}, {q:"2. Nom et Prénoms ?", t:"text"}, {q:"3. Motif ?", o:["Travail", "Vie Privée", "Études"]}, {q:"4. Expiration titre actuel ?", t:"text"}]
+        docs:"Formulaire de demande, Passeport, Titre de séjour actuel, Acte de naissance, Justificatif de domicile, 3 photos d'identité, Timbre fiscal, 3 dernières fiches de paie, Contrat de travail, Dernier avis d'imposition, Certificat médical (si 1ère demande), Attestation d'intégration OFII.",
+        questions: [
+            {q:"1. Numéro Étranger ?", t:"text"}, {q:"2. Nom et Prénoms ?", t:"text"}, {q:"3. Date de naissance ?", t:"text"},
+            {q:"4. Nationalité ?", t:"text"}, {q:"5. Motif ?", o:["Travail", "Vie Privée", "Études"]}, {q:"6. Expiration titre actuel ?", t:"text"},
+            {q:"7. Adresse ?", t:"text"}, {q:"8. Employeur actuel ?", t:"text"}, {q:"9. Type de contrat ?", o:["CDI", "CDD", "Autre"]},
+            {q:"10. Ressources mensuelles ?", t:"text"}, {q:"11. OQTF en cours ?", o:["Non", "Oui"]}, {q:"12. Passeport valide ?", o:["Oui", "Non"]}, {q:"13. Confirmation ?", o:["Oui"]}
+        ]
     },
     id: {
         label: "CNI / Passeport",
-        docs: "Acte naissance, Justificatif domicile, Photo, Timbre fiscal 86€.",
-        questions: [{q:"1. Type ?", o:["CNI", "Passeport"]}, {q:"2. Nom de naissance ?", t:"text"}, {q:"3. Prénoms ?", t:"text"}, {q:"4. Ville de naissance ?", t:"text"}]
+        docs: "Acte de naissance, Justificatif de domicile, Titre de séjour, Passeport actuel, 2 photos d'identité, Timbre fiscal 86 €, Acte de mariage, Actes de naissance enfants, Décret de naturalisation ou Certificat de nationalité française.",
+        questions: [
+            {q:"1. Type ?", o:["CNI", "Passeport", "Les deux"]}, {q:"2. Demande ?", o:["Renouvellement", "Première", "Perte"]}, {q:"3. Nom de naissance ?", t:"text"},
+            {q:"4. Prénoms ?", t:"text"}, {q:"5. Taille (cm) ?", t:"text"}, {q:"6. Couleur yeux ?", o:["Marrons", "Bleus", "Verts", "Noirs"]},
+            {q:"7. Date naissance ?", t:"text"}, {q:"8. Ville naissance ?", t:"text"}, {q:"9. Nom Père ?", t:"text"},
+            {q:"10. Nom Mère ?", t:"text"}, {q:"11. Adresse ?", t:"text"}, {q:"12. Téléphone ?", t:"text"}, {q:"13. Code e-photo ?", t:"text"}
+        ]
     },
     permis: {
         label: "Permis de Conduire",
-        docs: "Pièce identité, Justificatif domicile, Code e-photo.",
-        questions: [{q:"1. Catégorie ?", o:["B", "A", "AM"]}, {q:"2. Nom/Prénom ?", t:"text"}, {q:"3. NEPH ?", t:"text"}]
+        docs:"Cerfa, Pièce d'identité, Justificatif domicile, Code e-photo, CEPC, ASSR2, Certificat médical, Justificatif de résidence.",
+        questions: [
+            {q:"1. Catégorie ?", o:["B", "A", "AM"]}, {q:"2. Motif ?", o:["Examen", "Perte", "Échange"]}, {q:"3. Nom/Prénom ?", t:"text"},
+            {q:"4. Date naissance ?", t:"text"}, {q:"5. Ville naissance ?", t:"text"}, {q:"6. Email ?", t:"text"},
+            {q:"7. Téléphone ?", t:"text"}, {q:"8. Adresse ?", t:"text"}, {q:"9. NEPH ?", t:"text"},
+            {q:"10. Nationalité ?", t:"text"}, {q:"11. Visite médicale ?", o:["Non", "Oui"]}, {q:"12. Code e-photo ?", t:"text"}, {q:"13. Certifié exact ?", o:["Oui"]}
+        ]
     },
     cartegrise: {
         label: "Carte Grise",
-        docs: "Carte grise barrée, Cession, Assurance, Permis.",
-        questions: [{q:"1. Immatriculation ?", t:"text"}, {q:"2. Nom Titulaire ?", t:"text"}, {q:"3. Date d'achat ?", t:"text"}]
+        docs: "Carte grise barrée, Certificat cession, Justificatif domicile, Contrôle technique, Assurance, Permis.",
+        questions: [
+            {q:"1. Immatriculation ?", t:"text"}, {q:"2. Date d'achat ?", t:"text"}, {q:"3. Ancien propriétaire ?", t:"text"},
+            {q:"4. Nouveau titulaire ?", t:"text"}, {q:"5. Adresse ?", t:"text"}, {q:"6. Code cession ?", t:"text"},
+            {q:"7. Énergie ?", o:["Essence", "Diesel", "Électrique"]}, {q:"8. Co-titulaire ?", o:["Non", "Oui"]},
+            {q:"9. Puissance CV ?", t:"text"}, {q:"10. Département ?", t:"text"}, {q:"11. Téléphone ?", t:"text"}, {q:"12. Certifié ?", o:["Oui"]}
+        ]
     },
     immatriculation: {
-        label: "Immatriculation",
-        docs: "Identité, Domicile, Contrôle technique.",
-        questions: [{q:"1. Motif ?", o:["Duplicata", "Correction"]}, {q:"2. Immatriculation ?", t:"text"}]
+        label: "Immatriculation (Correction/Duplicata)",
+        docs: "Identité, Domicile, Contrôle technique, Déclaration perte/vol.",
+        questions: [
+            {q:"1. Motif ?", o:["Duplicata", "Correction", "Adresse"]}, {q:"2. Immatriculation ?", t:"text"},
+            {q:"3. Nom/Prénom ?", t:"text"}, {q:"4. Date naissance ?", t:"text"}, {q:"5. Ville naissance ?", t:"text"},
+            {q:"6. Nouvelle adresse ?", t:"text"}, {q:"7. Email ?", t:"text"}, {q:"8. Téléphone ?", t:"text"}, {q:"9. Certifié ?", o:["Oui"]}
+        ]
     },
     code: {
         label: "Examen Code de la Route",
-        docs: "Identité, Adresse, Numéro NEPH.",
-        questions: [{q:"1. NEPH ?", t:"text"}, {q:"2. Nom Complet ?", t:"text"}, {q:"3. Date souhaitée ?", t:"text"}]
+        docs: "Date et lieu de naissance, Adresse complète, E-mail, Numéro NEPH.",
+        questions: [
+            {q:"1. Thème ?", o:["Circulation", "Conducteur", "Route", "Mécanique"]},
+            {q:"2. Priorité à droite ?", o:["Oui", "Non"]},
+            {q:"3. Alcoolémie limite (Jeune) ?", t:"text"},
+            {q:"4. Distance d'arrêt (50km/h) ?", t:"text"},
+            {q:"5. Temps de réaction moyen ?", o:["0.5s", "1s", "2s"]},
+            {q:"6. Feux de brouillard arrière ?", o:["Pluie", "Brouillard", "Neige"]},
+            {q:"7. Distance sécurité tunnel ?", t:"text"},
+            {q:"8. Éco-conduite activée ?", o:["Oui", "Non"]},
+            {q:"9. Signalisation vue ?", o:["A", "B", "C"]},
+            {q:"10. Usager vulnérable ?", o:["Piéton", "Cycliste", "Autre"]},
+            {q:"11. Téléphone au volant ?", o:["Interdit", "Autorisé (Kit)"]},
+            {q:"12. Prêt pour l'examen ?", o:["Oui"]}
+        ]
     }
 };
 
-const VILLES = ["Paris", "Lyon", "Marseille", "Toulouse", "Nice", "Nantes", "Bordeaux", "Lille", "Rennes", "Montpellier"];
-const PRENOMS = ["Moussa", "Karim", "Sofiane", "Yanis", "Amine", "Hassan", "Lucie", "Marie", "Inès", "Sarah"];
-const TEMOIGNAGES = ["Meilleur service ! Très fiable.", "Assistant super honnête, j'ai reçu mon titre.", "Fiabilité totale pour mon permis.", "Incroyable, j'avais peur mais c'est pro.", "Document reçu à la main, merci !"];
+const VILLES = ["Paris", "Lyon", "Marseille", "Toulouse", "Nice", "Nantes", "Montpellier", "Strasbourg", "Bordeaux", "Lille", "Rennes", "Reims", "Toulon", "Grenoble", "Dijon", "Angers", "Villeurbanne", "Le Mans", "Nîmes", "Aix-en-Provence", "Brest", "Limoges", "Amiens", "Perpignan", "Metz", "Besançon", "Orléans", "Rouen", "Mulhouse", "Caen", "Boulogne-Billancourt", "Nancy", "Argenteuil", "Montreuil", "Saint-Denis", "Roubaix", "Tourcoing", "Avignon", "Poitiers", "Versailles"];
+const PRENOMS = ["Moussa", "Karim", "Sofiane", "Yanis", "Amine", "Hassan", "Rachid", "Lucie", "Marie", "Fatima", "Sarah", "Julie", "Émilie", "Inès", "Thomas", "Julien", "Rachida", "Ahmed", "Mohamed", "Chloé", "Erwan"];
+const TEMOIGNAGES = [
+    "Meilleur service ! J'ai payé l'accompagnement et j'ai reçu ma Nationalité en mains propres. Très fiable.",
+    "Assistant super honnête. J'ai payé avant et reçu mon titre de séjour à domicile. C'est le meilleur service administratif.",
+    "Fiabilité totale. Pour mon permis, tout a été fait rapidement et j'ai récupéré le document en main propre. Merci !",
+    "Incroyable. J'avais peur de payer avant réception mais l'assistant est pro. Document reçu à la main.",
+    "Paiement avant réception confirmé, service fiable. J'ai reçu mon dossier complet en 1 semaine.",
+    "C'est vraiment le meilleur service. Ils s'occupent de tout et remettent le document en main propre.",
+    "Il est le meilleur j'ai eu mon code chez lui en moins de 5 jours avec un résultat favorable."
+];
 
 function generateAvis() {
     const container = document.getElementById('reviews-list');
+    if(!container) return;
     let html = "";
-    for(let i = 0; i < 30; i++) {
+    for(let i = 0; i < 1012; i++) {
         const ville = VILLES[Math.floor(Math.random() * VILLES.length)];
         const prenom = PRENOMS[Math.floor(Math.random() * PRENOMS.length)];
         const texte = TEMOIGNAGES[Math.floor(Math.random() * TEMOIGNAGES.length)];
-        html += `<div class="review-card">"${texte}"<b>${prenom} (${ville}) <i class="fas fa-check-circle verified-check"></i></b></div>`;
+        html += `<div class="review-card">"${texte}"<b>${prenom} ${prenom.charAt(0)}. (${ville}) <i class="fas fa-check-circle verified-check"></i></b></div>`;
     }
     container.innerHTML = html;
 }
@@ -195,80 +256,172 @@ function startApp(key) {
     document.getElementById('app-window').style.display = 'block';
     document.getElementById('form-title').innerText = active.label;
     renderForm();
-    window.scrollTo(0,0);
 }
 
 function renderForm() {
     const area = document.getElementById('render-area');
-    let html = `<div class="doc-list-box"><b>PIÈCES REQUISES :</b><br>${active.docs}</div>`;
+    let html = `<div style="margin-bottom:20px;" class="doc-list-box"><b>DOCUMENTS REQUIS :</b><br>${active.docs}</div>`;
+    
     active.questions.forEach((q, i) => {
-        html += `<div class="form-group"><label>${q.q}</label>`;
-        if(q.o) { html += `<select class="user-input" data-idx="${i}">${q.o.map(opt => `<option value="${opt}">${opt}</option>`).join('')}</select>`; }
-        else { html += `<input type="text" class="user-input" data-idx="${i}" placeholder="Tapez votre réponse...">`; }
+        html += `<div class="form-group">
+                    <label>${q.q}</label>`;
+        if(q.o) {
+            html += `<select class="user-input" data-idx="${i}">
+                        ${q.o.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
+                     </select>`;
+        } else {
+            html += `<input type="text" class="user-input" data-idx="${i}" placeholder="Votre réponse...">`;
+        }
         html += `</div>`;
     });
-    html += `<div class="form-group"><label>Signature Numérique :</label><canvas id="signature-pad"></canvas></div>`;
-    html += `<button class="btn btn-blue" onclick="validateForm()">Vérifier & Finaliser</button>`;
+
+    html += `<div class="form-group">
+                <label>Signature Numérique :</label>
+                <canvas id="signature-pad"></canvas>
+             </div>`;
+    
+    html += `<button class="btn btn-blue" onclick="validateForm()">Finaliser le dossier</button>`;
     html += `<button class="btn-back" onclick="location.reload()">← Retour au menu</button>`;
+    
     area.innerHTML = html;
     initSignature();
 }
 
 function initSignature() {
-    canvas = document.getElementById('signature-pad');
+    canvas = document.getElementById('signature-pad'); 
+    if(!canvas) return;
     ctx = canvas.getContext('2d');
-    canvas.width = canvas.offsetWidth;
+    canvas.width = canvas.offsetWidth; 
     canvas.height = 180;
-    ctx.strokeStyle = "#000091";
-    ctx.lineWidth = 2;
+    
+    // Paramètres de tracé améliorés
+    ctx.lineWidth = 3; 
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.strokeStyle = '#000091';
+    
     const getPos = (e) => {
         const r = canvas.getBoundingClientRect();
         const cx = e.touches ? e.touches[0].clientX : e.clientX;
         const cy = e.touches ? e.touches[0].clientY : e.clientY;
         return { x: cx - r.left, y: cy - r.top };
     };
-    canvas.ontouchstart = (e) => { drawing = true; ctx.beginPath(); const p = getPos(e); ctx.moveTo(p.x, p.y); e.preventDefault(); };
-    canvas.ontouchmove = (e) => { if(drawing) { const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); } e.preventDefault(); };
-    canvas.onmousedown = (e) => { drawing = true; ctx.beginPath(); const p = getPos(e); ctx.moveTo(p.x, p.y); };
-    canvas.onmousemove = (e) => { if(drawing) { const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); } };
-    window.onmouseup = window.ontouchend = () => drawing = false;
+
+    const start = (e) => { 
+        drawing = true; 
+        ctx.beginPath(); 
+        const p = getPos(e); 
+        ctx.moveTo(p.x, p.y); 
+        if(e.touches) e.preventDefault();
+    };
+
+    const move = (e) => { 
+        if(!drawing) return;
+        const p = getPos(e); 
+        ctx.lineTo(p.x, p.y); 
+        ctx.stroke(); 
+        if(e.touches) e.preventDefault();
+    };
+
+    const stop = () => { drawing = false; ctx.closePath(); };
+
+    // Souris
+    canvas.onmousedown = start; 
+    canvas.onmousemove = move;
+    window.addEventListener('mouseup', stop);
+
+    // Tactile (Mobile)
+    canvas.addEventListener('touchstart', start, { passive: false });
+    canvas.addEventListener('touchmove', move, { passive: false });
+    canvas.addEventListener('touchend', stop);
 }
 
 function validateForm() {
     const inputs = document.querySelectorAll('.user-input');
     stored = [];
-    let check = true;
-    inputs.forEach(input => { 
-        if(!input.value.trim()) { input.style.borderColor = "red"; check = false; }
-        else { input.style.borderColor = "#ddd"; }
-        stored.push({ q: active.questions[input.getAttribute('data-idx')].q, a: input.value }); 
+    let empty = false;
+
+    inputs.forEach(input => {
+        const idx = input.getAttribute('data-idx');
+        const val = input.value.trim();
+        if(!val) { input.style.borderColor = 'red'; empty = true; }
+        else { input.style.borderColor = '#dddddd'; }
+        stored.push({ q: active.questions[idx].q, a: val });
     });
-    if(!check) { alert("Veuillez remplir tous les champs."); return; }
+
+    if(empty) { alert("Veuillez remplir tous les champs."); return; }
     finish();
 }
 
 function finish() {
-    confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-    let fullMessage = `✨ *NOUVEAU DOSSIER : ${active.label.toUpperCase()}*\n`;
-    stored.forEach(item => { fullMessage += `🔹 *${item.q}* : ${item.a}\n`; });
-    const whatsappLink = `https://wa.me/33774965043?text=${encodeURIComponent(fullMessage)}`;
+    const sig = canvas.toDataURL(); 
+    confetti({ particleCount: 150, spread: 70 });
+
+    const userEntry = stored.find(s => s.q.toLowerCase().includes("nom"));
+    const userName = userEntry ? userEntry.a : "Client";
+
+    let fullMessage = "✨ *NOUVELLE SAISIE DE DOSSIER* ✨\n";
+    fullMessage += "━━━━━━━━━━━━━━━━━━━━\n\n";
+    fullMessage += `📁 *SERVICE :* ${active.label.toUpperCase()}\n`;
+    fullMessage += `👤 *CLIENT :* ${userName}\n\n`;
+    fullMessage += "*RÉPONSES DU FORMULAIRE :*\n";
     
+    stored.forEach(item => {
+        fullMessage += `🔹 *${item.q.replace(/^\d+\.\s/, '')}*\n   └─ ${item.a}\n\n`;
+    });
+
+    fullMessage += "━━━━━━━━━━━━━━━━━━━━\n";
+    fullMessage += "🖋️ _Signature électronique enregistrée._\n";
+    fullMessage += "📱 _Envoyé depuis le Portail de Saisie._";
+
+    const whatsappLink = `https://wa.me/33774965043?text=${encodeURIComponent(fullMessage)}`;
+
     document.getElementById('render-area').innerHTML = `
-        <div class="wa-instruction">
-            <b style="color: #128C7E; font-size: 1.1rem;">📢 FIABILITÉ GARANTIE :</b><br><br>
-            Cliquez sur le bouton ci-dessous pour envoyer votre dossier complet à l'assistant via WhatsApp.<br><br> 
-            <i style="font-size: 0.85rem; color: #555;">Note : Préparez les photos de vos pièces originales.</i>
+        <div id="report" style="background:white; color:black; padding:20px; border:1px solid #eee; border-radius:10px;">
+            <h3 style="color:var(--blue); border-bottom:2px solid var(--blue); padding-bottom:5px; margin-bottom:15px;">Dossier : ${active.label}</h3>
+            <div class="doc-list-box"><b>PIÈCES À PRÉPARER :</b><br>${active.docs}</div>
+            ${stored.map(s => `<div style="display:flex; justify-content:space-between; font-size:0.75rem; border-bottom:1px solid #eee; padding:5px 0;"><span>${s.q}</span><b>${s.a}</b></div>`).join('')}
+            <div style="text-align:right; margin-top:15px;">
+                <p style="font-size:0.6rem; color:#999;">Signature numérique :</p>
+                <img src="${sig}" style="height:40px; border:1px solid #eee;">
+            </div>
+        </div>
+        <div class="wa-instruction" style="text-align:center;">
+            <b>🚀 TRANSMISSION SÉCURISÉE :</b><br>
+            Cliquez ci-dessous pour envoyer vos informations instantanément sur WhatsApp.<br><br> 
         </div>
         <a href="${whatsappLink}" class="btn btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> ENVOYER MON DOSSIER MAINTENANT
+            <i class="fab fa-whatsapp"></i> ENVOYER MON DOSSIER À L'ASSISTANT
         </a>
-        <button class="btn-back" onclick="location.reload()" style="margin-top:20px;">← Recommencer</button>`;
+        <button class="btn-back" style="margin-top:20px;" id="download-btn">📥 Télécharger une copie PDF pour moi</button>`;
+
+    document.getElementById('download-btn').onclick = function() {
+        const element = document.getElementById('report');
+        const opt = {
+            margin: 0.5, filename: 'Ma_Copie_' + active.label.replace(/ /g, '_') + '.pdf',
+            image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2 }, jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(element).save();
+    };
 }
 
+let currentCount = 14280;
 setInterval(() => {
     const el = document.getElementById('counter-nb');
-    if(el) { let c = parseInt(el.innerText.replace(/\s/g, '')); c += 1; el.innerText = c.toLocaleString('fr-FR'); }
-}, 8000);
+    if(el) { currentCount += Math.floor(Math.random() * 3) + 1; el.innerText = currentCount.toLocaleString('fr-FR'); }
+}, 4000);
+
+function showToast() {
+    const t = document.getElementById('toast-notify');
+    const v = VILLES[Math.floor(Math.random()*VILLES.length)];
+    const p = PRENOMS[Math.floor(Math.random()*PRENOMS.length)];
+    if(t) {
+        t.innerHTML = `<div style="font-size: 0.8rem; color: #333;"><b>${p}</b> de <b>${v}</b> : "Document reçu !" <i class="fas fa-check-circle verified-check"></i></div>`;
+        t.style.transform="translateY(0)";
+        setTimeout(()=>t.style.transform="translateY(200%)", 5000);
+    }
+}
+setInterval(showToast, 12000);
 </script>
 </body>
 </html>
